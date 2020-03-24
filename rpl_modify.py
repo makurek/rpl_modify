@@ -100,6 +100,8 @@ def main():
 		opts, args = getopt.getopt(argv, 'p:a:u:', ['prefix=', 'action=', 'upstream='])
 		if len(opts) == 0 or len(opts) > 3:
 			print('Usage: rpl_modify.py -p <prefix> -a <action>')
+			logging.error("Incorrect number of parameters given, terminating...")
+			sys.exit(1)
 		else:
 			for opt, arg in opts:
 				if opt in ('-p', '--prefix'):
